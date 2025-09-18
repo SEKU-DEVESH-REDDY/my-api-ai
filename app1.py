@@ -63,7 +63,9 @@ def results_to_nl(user_query, results):
         return f"Here are the records:\n{results['rows']}"
 
     return f"Query results: {results['rows']}"
-
+@app.route("/", methods=["GET"])
+def home():
+    return jsonify({"message": "API is running! Use POST /query with JSON body."})
 # --- API Endpoint ---
 @app.route("/query", methods=["POST"])
 def query():
