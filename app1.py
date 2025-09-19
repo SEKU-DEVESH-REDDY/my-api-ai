@@ -1,12 +1,8 @@
 from flask import Flask, request, jsonify
 import sqlite3
-from dotenv import load_dotenv
 import os
 
-load_dotenv()  # load variables from .env
-
-API_KEY = os.getenv("API_KEY")
-SECRET_KEY = os.getenv("SECRET_KEY")
+API_KEY = os.getenv("API_KEY", "mysecretkey")
 
 app = Flask(__name__)
 
